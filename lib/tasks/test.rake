@@ -22,6 +22,8 @@ namespace :test do
     # Checks ENV variables to determine if user specified a file or spec
     spec = ENV["SPEC"]
 
+    sh "rake db:test:prepare"
+
     if !spec || spec =~ /features/
       # Remove any existing compiled version of the SPA
       puts ""
